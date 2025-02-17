@@ -7,4 +7,118 @@
     android:layout_height="match_parent"
     tools:context=".Result_Activity">
 
+    <TextView
+        android:id="@+id/Tv_Title2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="DailyConversor"
+        android:textSize="38dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Tv_subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="O resultado da conversão é:"
+        android:textSize="17dp"
+        android:gravity="center"
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Tv_Title2" />
+
+    <TextView
+        android:id="@+id/Tv_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="58"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="25dp"
+        app:layout_constraintTop_toBottomOf="@+id/Tv_subtitle"
+        tools:layout_editor_absoluteX="170dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_peso"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/Tv_result"
+        tools:layout_editor_absoluteX="30dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_peso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="Peso" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_distancia"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/til_peso">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_distancia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="Distancia" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_volume"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/til_distancia">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_volume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="Volume" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/btn_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn_guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="16dp"
+        android:text="Converter"/>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/btn_guideline"
+        android:layout_margin="16dp"
+        android:text="Novo Cálculo"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
