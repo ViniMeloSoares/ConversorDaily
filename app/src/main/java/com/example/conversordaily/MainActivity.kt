@@ -1,26 +1,31 @@
 package com.example.conversordaily
 
-import android.content.Intent
+
 import android.os.Bundle
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.conversordaily.databinding.ActivityMainBinding
+import com.example.conversordaily.databinding.ActivityResultBinding
+
+private lateinit var binding: ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding= ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
-        val btn_iniciar = findViewById<Button>(R.id.btn_iniciar)
-        val intent1 = Intent(this, Result_Activity::class.java)
+        val intent = Intent(this, Result_Activity::class.java)
 
-        btn_iniciar.setOnClickListener {
-
-            startActivity(intent1)
+        binding.btnIniciar.setOnClickListener {
+            startActivity(intent)
 
         }
       }
-}
+    }
 
