@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">ConversorDaily</string>
+    <string-array name="Peso">
+    <item>Gramas</item>
+    <item >Quilogramas</item>
+    </string-array>
+
+    <string-array name="distancia">
+     <item>Quilometros</item>
+     <item>Metro</item>
+    </string-array>
+    
+    <string-array name="Volume">
+    <item>Mililitro</item>
+    <item>Litro</item>
+
+
+    </string-array>
+
+
 </resources>
