@@ -2,6 +2,9 @@ package com.example.conversordaily
 
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.Spinner
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -17,32 +20,77 @@ class Result_Activity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        val adapter_peso = ArrayAdapter.createFromResource(
-            this,
-            R.array.Peso,
-            android.R.layout.simple_spinner_item
-        )
-        adapter_peso.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        binding.spPesoEntrada.adapter = adapter_peso
-        binding.spPesoSaida.adapter = adapter_peso
+        // Recuperando para o Spinner de peso
+        val spinnerpesoentrada: Spinner = binding.spPesoEntrada
+        val spinnerpesosaida: Spinner = binding.spPesoSaida
 
-        val adapter_distancia = ArrayAdapter.createFromResource(
-            this,
-            R.array.distancia,
-            android.R.layout.simple_spinner_item
-        )
-        adapter_distancia.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        binding.spDistanciaEntrada.adapter = adapter_distancia
-        binding.spDistanciaSaida.adapter = adapter_distancia
+        // Recuperando Spinner de comprimento
+        val spinnercomprimentoentrada: Spinner = binding.spComprimentoEntrada
+        val spinnercomprimentosaida: Spinner = binding.spComprimentoSaida
 
-        val adapter_volume = ArrayAdapter.createFromResource(
-            this,
-            R.array.Volume,
-            android.R.layout.simple_spinner_item
+        // Recuperando Spinner de volume
+        val spinnervolumeentrada: Spinner = binding.spVolumeEntrada
+        val spinnervolumesaida: Spinner = binding.spVolumeSaida
+
+        // Recuperando botões e result
+        val btnconverter: Button = binding.buttonConverter
+        val bntnovocalculo: Button = binding.buttonNovoCalculo
+        val tvResult: TextView = binding.TvResult
+
+        // Lista de opções Spinner
+        val optionsPeso = arrayOf(
+            "Quilograma",
+            "Tonelada",
+            "Hectograma",
+            "Decagrama",
+            "Grama",
+            "Decigrama",
+            "Centigrama",
+            "Centigrama",
+            "Miligrama"
         )
-        adapter_volume.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        binding.spVolumeEntrada.adapter = adapter_volume
-        binding.spVolumeSaida.adapter = adapter_volume
+
+        val optionsComprimento = arrayOf(
+            "Quilômetro",
+            "Hectômetro",
+            "Decâmetro",
+            "Metro",
+            "Decímetro",
+            "Centíemetro",
+            "Milímetro"
+        )
+
+        val optionsVolume = arrayOf(
+            "Quilolitro",
+            "Hectrolitro",
+            "Decalitro",
+            "Decilitro",
+            "Centilitro",
+            "Mililitro",
+            "Litro"
+        )
+
+        //  Criação do ArrayAdapter para o Spinner
+        val adapterPeso = ArrayAdapter(this,android.R.layout.simple_spinner_item, optionsPeso)
+        val adapterComprimento = ArrayAdapter(this, android.R.layout.simple_spinner_item, optionsComprimento)
+        val adapterVolume = ArrayAdapter(this,android.R.layout.simple_spinner_item, optionsVolume)
+
+        // Definição de layout para as opções do Spinner
+
+        adapterPeso.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item)
+        adapterComprimento.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item)
+        adapterVolume.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item)
+
+        //Aplicação do adaptador ao Spinner
+        spinnerpesoentrada.adapter = adapterPeso
+        spinnerpesosaida.adapter = adapterPeso
+        spinnercomprimentoentrada.adapter = adapterComprimento
+        spinnercomprimentosaida.adapter = adapterComprimento
+        spinnervolumeentrada.adapter = adapterVolume
+        spinnervolumesaida.adapter = adapterVolume
+
+
+
 
     }
 }
