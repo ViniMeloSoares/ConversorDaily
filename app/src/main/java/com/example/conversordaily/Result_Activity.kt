@@ -89,6 +89,38 @@ class Result_Activity : AppCompatActivity() {
         spinnervolumeentrada.adapter = adapterVolume
         spinnervolumesaida.adapter = adapterVolume
 
+        //Conversão das medidas
+        val conversaopeso = mapOf(
+            "Quilograma" to 1.0,
+            "Tonelada" to 1000.0,
+            "Hectagrama" to 0.1,
+            "Dectagrama" to 0.01,
+            "Grama" to 0.001,
+            "Decigrama" to 0.0001,
+            "Centigrama" to 0.00001,
+            "Miligrama" to 0.000001
+        )
+
+        val conversaocomprimento = mapOf(
+            "Quilômetro" to 1000.0,
+            "Hectrômetro" to 100.0,
+            "Decâmetro" to 10.0,
+            "Metro" to 1.0,
+            "Decímetro" to 0.1,
+            "Centímetro" to 0.01,
+            "Milímetro" to 0.001
+        )
+
+        val conversaolitro = mapOf(
+            "Quilolitro" to 0.001,
+            "Hectolitro" to 0.01,
+            "Decalitro" to 0.1,
+            "Litro" to 1.0,
+            "Decilitro" to 10.0,
+            "Centilitro" to 100.0,
+            "Mililitro" to 1000.0
+        )
+
 
 
 
