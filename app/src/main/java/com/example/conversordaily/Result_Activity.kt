@@ -5,11 +5,13 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Spinner
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.conversordaily.databinding.ActivityResultBinding
+import com.google.android.material.snackbar.Snackbar
 
 private lateinit var binding: ActivityResultBinding
 
@@ -71,9 +73,10 @@ class Result_Activity : AppCompatActivity() {
         )
 
         //  Criação do ArrayAdapter para o Spinner
-        val adapterPeso = ArrayAdapter(this,android.R.layout.simple_spinner_item, optionsPeso)
-        val adapterComprimento = ArrayAdapter(this, android.R.layout.simple_spinner_item, optionsComprimento)
-        val adapterVolume = ArrayAdapter(this,android.R.layout.simple_spinner_item, optionsVolume)
+        val adapterPeso = ArrayAdapter(this, android.R.layout.simple_spinner_item, optionsPeso)
+        val adapterComprimento =
+            ArrayAdapter(this, android.R.layout.simple_spinner_item, optionsComprimento)
+        val adapterVolume = ArrayAdapter(this, android.R.layout.simple_spinner_item, optionsVolume)
 
         // Definição de layout para as opções do Spinner
 
@@ -121,8 +124,24 @@ class Result_Activity : AppCompatActivity() {
             "Mililitro" to 1000.0
         )
 
+        //Clique botão conversor
+        btnconverter.setOnClickListener {
+            val PesoValue = binding.edtPeso.text.toString()
+            val ComprimentoValue = binding.edtComprimento.text.toString()
+            val VolumeValue = binding.edtVolume.text.toString()
 
+            //Verificar se os valores estão vazios
+            if (PesoValue.isNotEmpty() && (ComprimentoValue.isNotEmpty()) && (VolumeValue.isNotEmpty())) {
+            Toast.makeText(
+                 this,
+                 "Prencha o valor a ser convertido",
+            Toast.LENGTH_LONG)
+            .show()
+            return@setOnClickListener
+      }
 
-
+        var resultado = 0.0
+        var unidadeSaida = ""
     }
+  }
 }
